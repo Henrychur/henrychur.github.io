@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Medical Multilingual Benchmark</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+      <a class="navbar-brand" href="https://ai4med.sjtu.edu.cn/">
+        <img src="https://ai4med.sjtu.edu.cn/static/default/images/logo.png" alt="AI4Med Logo" style="width: 60%;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Huggingface</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header-->
+  <header class="bg-primary bg-gradient text-white">
+    <div class="container px-4 text-center">
+      <h1 class="fw-bolder">MultilingualMedQA</h1>
+      <p class="lead">A Medical Benchmark for Multilingual Comprehension</p>
+      <!-- <a class="btn btn-lg btn-light" href="#about">Start !</a> -->
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="list-group">
+          <div class="list-group-item">
+            <h4>About</h4>
+            <p></p>
+            <p>The task of MultilingualMedQA is to answer medical muti-choice questions from 6 different languages. In addition, each question has a rationale for the choice.
+              abstracts. </p>
+            <p>For more details about MultilingualMedQA, please refer to this paper:</p>
+            <p class="text-center">
+              <a href="https://arxiv.org/abs/1909.06146"><button type="button" class="btn btn-info">MultilingualMedQA Paper
+                </button></a>
+            </p>
+          </div>
+          <div class="list-group-item">
+            <h4>Dataset</h4>
+            <p>MultilingualMedQA is a medical muti-choice dataset of 6 different languages. It contains 45k samples for the trainset and 8,518 samples for the testset. Each 
+              question is company with a right answer and high quality rationale. </p>
+            <p>Please visit our GitHub repository to download the dataset:</p>
+            <p class="text-center">
+              <a href="https://github.com/pubmedqa/pubmedqa"><button type="button" class="btn btn-success">Data
+                  & Code Repository</button></a>
+            </p>
+          </div>
+          <div class="list-group-item">
+            <h4>Submission</h4>
+            <p>To submit your model, please follow the instructions in the GitHub repository.</p>
+          </div>
+          <div class="list-group-item">
+            <h4>Citation</h4>
+            <p>If you use MultilingualMedQA in your research, please cite our paper by:</p>
+            <pre>
+  @inproceedings{}
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="card card-outline-secondary">
+          <div class="card-header">
+            Leaderboard 
+          </div>
+          <div class="card-body">
+            <table class="table table-responsive">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" rowspan=1></th>
+                  <th scope="col" rowspan=1 class="align-middle text-center">Model</th>
+                  <th scope="col" rowspan=1 class="align-middle text-center">Code</th>
+                  <th scope="col" rowspan=1 class="align-middle text-center">Size</th>
+                  <th scope="col" colspan=1 class='text-center'>Acc (%)</th>
+                  <th scope="col" colspan=1 class='text-center'>BLEU<sup>1</sup></th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>1<br>
+                    <span class="badge badge-secondary">Nov 28, 2023</span>
+                  </td>
+                  <td class='align-middle text-center'>GPT-4 (Medprompt)<br />
+                    <span class="affiliation">Microsoft</span><br /><a href="https://arxiv.org/abs/2311.16452"
+                      class="paperlink">(Nori et al. 2023)</a>
+                  </td>
+                  <td class='align-middle text-center'></td>
+                  <td class='align-middle text-center'>NA</td>
+                  <td class='align-middle text-center'>82.0</td>
+                  <td class='align-middle text-center'>NA</td>
+                </tr>
+
+
+              </tbody>
+            </table>
+            <p><sup>1</sup> that BELU is evaluated on manually checked samples in the testset</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <hr>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+      <div class="container px-4">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
