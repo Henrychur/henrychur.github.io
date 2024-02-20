@@ -34,7 +34,7 @@
   <!-- Header-->
   <header class="bg-primary bg-gradient text-white">
     <div class="container px-4 text-center">
-      <h1 class="fw-bolder">MultilingualMedQA</h1>
+      <h1 class="fw-bolder">MMedBench</h1>
       <p class="lead">A Medical Benchmark for Multilingual Comprehension</p>
       <!-- <a class="btn btn-lg btn-light" href="#about">Start !</a> -->
     </div>
@@ -48,17 +48,17 @@
           <div class="list-group-item">
             <h4>About</h4>
             <p></p>
-            <p>The task of MultilingualMedQA is to answer medical muti-choice questions from 6 different languages. In addition, each question has a rationale for the choice.
+            <p>The task of MMedBench is to answer medical muti-choice questions from 6 different languages. In addition, each question has a rationale for the choice.
               abstracts. </p>
-            <p>For more details about MultilingualMedQA, please refer to this paper:</p>
+            <p>For more details about MMedBench, please refer to this paper:</p>
             <p class="text-center">
-              <a href="https://arxiv.org/abs/1909.06146"><button type="button" class="btn btn-info">MultilingualMedQA Paper
+              <a href="https://arxiv.org/abs/1909.06146"><button type="button" class="btn btn-info">MMedBench Paper
                 </button></a>
             </p>
           </div>
           <div class="list-group-item">
             <h4>Dataset</h4>
-            <p>MultilingualMedQA is a medical muti-choice dataset of 6 different languages. It contains 45k samples for the trainset and 8,518 samples for the testset. Each 
+            <p>MMedBench is a medical muti-choice dataset of 6 different languages. It contains 45k samples for the trainset and 8,518 samples for the testset. Each 
               question is company with a right answer and high quality rationale. </p>
             <p>Please visit our GitHub repository to download the dataset:</p>
             <p class="text-center">
@@ -72,7 +72,7 @@
           </div>
           <div class="list-group-item">
             <h4>Citation</h4>
-            <p>If you use MultilingualMedQA in your research, please cite our paper by:</p>
+            <p>If you use MMedBench in your research, please cite our paper by:</p>
             <pre>
   @inproceedings{}
             </pre>
@@ -92,30 +92,188 @@
                   <th scope="col" rowspan=1 class="align-middle text-center">Model</th>
                   <th scope="col" rowspan=1 class="align-middle text-center">Code</th>
                   <th scope="col" rowspan=1 class="align-middle text-center">Size</th>
-                  <th scope="col" colspan=1 class='text-center'>Acc (%)</th>
-                  <th scope="col" colspan=1 class='text-center'>BLEU<sup>1</sup></th>
+                  <th scope="col" colspan=1 class='text-center'>Accuray (%)</th>
+                  <th scope="col" colspan=1 class='text-center'>Rationale(BLEU-1)</sup></th>
                 </tr>
               </thead>
               <tbody>
 
                 <tr>
                   <td scope="row" class='align-middle text-center'>1<br>
-                    <span class="badge badge-secondary">Nov 28, 2023</span>
+                    <!-- <span class="badge badge-secondary">Nov 28, 2023</span> -->
                   </td>
-                  <td class='align-middle text-center'>GPT-4 (Medprompt)<br />
-                    <span class="affiliation">Microsoft</span><br /><a href="https://arxiv.org/abs/2311.16452"
-                      class="paperlink">(Nori et al. 2023)</a>
+                  <td class='align-middle text-center'>GPT-4<br />
+                    <a href="https://arxiv.org/abs/2303.08774" class="paperlink">paperlink</a>
                   </td>
                   <td class='align-middle text-center'></td>
                   <td class='align-middle text-center'>NA</td>
-                  <td class='align-middle text-center'>82.0</td>
+                  <td class='align-middle text-center'>74.27</td>
                   <td class='align-middle text-center'>NA</td>
                 </tr>
 
+                <tr>
+                  <td scope="row" class='align-middle text-center'>2
+                  </td>
+                  <td class='align-middle text-center'>MMedLM 2<br />
+                    <a href=" " class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>67.30</td>
+                  <td class='align-middle text-center'>48.81</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>3
+                  </td>
+                  <td class='align-middle text-center'>Mistral<br />
+                    <a href="https://arxiv.org/abs/2310.06825" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'>  <a href="https://github.com/mistralai/mistral-src" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 20px; height: 20px;">
+                  </a></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>60.73</td>
+                  <td class='align-middle text-center'>45.37</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>4
+                  </td>
+                  <td class='align-middle text-center'>InternLM 2<br />
+                    <!-- <a href=" " class="paperlink">paperlink</a> -->
+                  </td>
+                  <td class='align-middle text-center'>  <a href="https://github.com/InternLM/InternLM" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 20px; height: 20px;">
+                  </a></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>58.59</td>
+                  <td class='align-middle text-center'>46.52</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>6
+                  </td>
+                  <td class='align-middle text-center'>Gemini-1.0 pro<br />
+                    <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'></td>
+                  <td class='align-middle text-center'>NA</td>
+                  <td class='align-middle text-center'>55.20</td>
+                  <td class='align-middle text-center'>7.28</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>5
+                  </td>
+                  <td class='align-middle text-center'>MMedLM<br />
+                    <a href=" " class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>55.01</td>
+                  <td class='align-middle text-center'>45.05</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>6
+                  </td>
+                  <td class='align-middle text-center'>GPT-3.5<br />
+                    <a href="https://openai.com/blog/chatgpt" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'></td>
+                  <td class='align-middle text-center'>NA</td>
+                  <td class='align-middle text-center'>51.82</td>
+                  <td class='align-middle text-center'>26.01</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>7
+                  </td>
+                  <td class='align-middle text-center'>InternLM<br />
+                    <a href="https://raw.githubusercontent.com/InternLM/InternLM-techreport/main/InternLM.pdf" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'>  <a href="https://github.com/InternLM/InternLM" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 20px; height: 20px;">
+                  </a></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>45.67</td>
+                  <td class='align-middle text-center'>42.12</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>8
+                  </td>
+                  <td class='align-middle text-center'>BLOOMZ<br />
+                    <a href="https://arxiv.org/abs/2211.01786" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'>  <a href="https://github.com/bigscience-workshop/xmtf" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 20px; height: 20px;">
+                  </a></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>45.10</td>
+                  <td class='align-middle text-center'>43.22</td>
+                </tr>
+                
+                <tr>
+                  <td scope="row" class='align-middle text-center'>9
+                  </td>
+                  <td class='align-middle text-center'>LLaMA 2<br />
+                    <a href="https://arxiv.org/abs/2307.09288" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'>  <a href="https://github.com/facebookresearch/llama" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 20px; height: 20px;">
+                  </a></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>42.26</td>
+                  <td class='align-middle text-center'>44.24</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>10
+                  </td>
+                  <td class='align-middle text-center'>Med-Alpaca<br />
+                    <a href="https://arxiv.org/abs/2304.08247" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'>  <a href="https://github.com/kbressem/medAlpaca" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 20px; height: 20px;">
+                  </a></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>41.11</td>
+                  <td class='align-middle text-center'>43.49</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>11
+                  </td>
+                  <td class='align-middle text-center'>PMC-LLaMA<br />
+                    <a href="https://arxiv.org/abs/2304.14454" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'>  <a href="https://github.com/chaoyi-wu/PMC-LLaMA/tree/main" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 20px; height: 20px;">
+                  </a></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>40.04</td>
+                  <td class='align-middle text-center'>43.16</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class='align-middle text-center'>12
+                  </td>
+                  <td class='align-middle text-center'>ChatDoctor<br />
+                    <a href="https://arxiv.org/abs/2303.14070" class="paperlink">paperlink</a>
+                  </td>
+                  <td class='align-middle text-center'>  <a href="https://github.com/Kent0n-Li/ChatDoctor" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 20px; height: 20px;">
+                  </a></td>
+                  <td class='align-middle text-center'>7B</td>
+                  <td class='align-middle text-center'>39.53</td>
+                  <td class='align-middle text-center'>42.21</td>
+                </tr>
 
               </tbody>
             </table>
-            <p><sup>1</sup> that BELU is evaluated on manually checked samples in the testset</p>
+            <!-- <p><sup>1</sup> that BELU is evaluated on manually checked samples in the testset</p> -->
           </div>
         </div>
 
