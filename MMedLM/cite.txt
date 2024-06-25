@@ -1,0 +1,6 @@
+@arxiv{qiu2024towards,
+  title={Towards Building Multilingual Language Model for Medicine},
+  author={Qiu, Pengcheng and Wu, Chaoyi and Zhang, Xiaoman and Lin, Weixiong and Wang, Haicheng and Zhang, Ya and Wang, Yanfeng and Xie, Weidi},
+  journal={arXiv preprint arXiv:2402.13963},
+  year={2024}
+}

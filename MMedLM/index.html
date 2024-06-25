@@ -1,0 +1,457 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!--
+  <script src="./resources/jsapi" type="text/javascript"></script>
+  <script type="text/javascript" async>google.load("jquery", "1.3.2");</script>
+ -->
+
+  <style type="text/css">
+    @font-face {
+      font-family: 'Avenir Book';
+      src: url("./fonts/Avenir_Book.ttf");
+      /* File to be stored at your site */
+    }
+
+    body {
+      font-family: "Avenir Book", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 800px;
+    }
+
+    h1 {
+      font-weight: 300;
+    }
+
+    h2 {
+      font-weight: 300;
+    }
+
+    p {
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    code {
+      font-size: 0.8rem;
+      margin: 0 0.2rem;
+      padding: 0.5rem 0.8rem;
+      white-space: nowrap;
+      background: #efefef;
+      border: 1px solid #d3d3d3;
+      color: #000000;
+      border-radius: 3px;
+    }
+
+    pre>code {
+      display: block;
+      white-space: pre;
+      line-height: 1.5;
+      padding: 0;
+      margin: 0;
+    }
+
+    pre.prettyprint>code {
+      border: none;
+    }
+
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .image {
+      flex-basis: 40%
+    }
+
+    .text {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .disclaimerbox {
+      background-color: #eee;
+      border: 1px solid #eeeeee;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      padding: 20px;
+    }
+
+    video.header-vid {
+      height: 140px;
+      border: 1px solid black;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
+
+    img.header-img {
+      height: 140px;
+      border: 1px solid black;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
+
+    img.rounded {
+      border: 0px solid #eeeeee;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+
+    }
+
+    a:link,
+    a:visited {
+      color: #1367a7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #208799;
+    }
+
+    td.dl-link {
+      height: 160px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    .layered-paper-big {
+      /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+      box-shadow:
+        0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+        /* The top layer shadow */
+        5px 5px 0 0px #fff,
+        /* The second layer */
+        5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+        /* The second layer shadow */
+        10px 10px 0 0px #fff,
+        /* The third layer */
+        10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+        /* The third layer shadow */
+        15px 15px 0 0px #fff,
+        /* The fourth layer */
+        15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+        /* The fourth layer shadow */
+        20px 20px 0 0px #fff,
+        /* The fifth layer */
+        20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+        /* The fifth layer shadow */
+        25px 25px 0 0px #fff,
+        /* The fifth layer */
+        25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+      /* The fifth layer shadow */
+      margin-left: 10px;
+      margin-right: 45px;
+    }
+
+
+    .layered-paper {
+      /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+      box-shadow:
+        0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+        /* The top layer shadow */
+        5px 5px 0 0px #fff,
+        /* The second layer */
+        5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+        /* The second layer shadow */
+        10px 10px 0 0px #fff,
+        /* The third layer */
+        10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+      /* The third layer shadow */
+      margin-top: 5px;
+      margin-left: 10px;
+      margin-right: 30px;
+      margin-bottom: 5px;
+    }
+
+    .vert-cent {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+  </style>
+
+  <title>Towards Building Multilingual Language Model for Medicine</title>
+</head>
+
+<body>
+  <br>
+  <center>
+    <span style="font-size:36px">Towards Building Multilingual Language Model for Medicine</span><br><br><br>
+  </center>
+  <table align="center" width="900px">
+    <tbody>
+      <tr>
+        <td align="center" width="180px">
+          <center>
+            <span style="font-size:16px"><a href="">Pengcheng Qiu<sup>*</sup></a><sup>1,2</sup></span>
+          </center>
+        </td>
+        <td align="center" width="180px">
+          <center>
+            <span style="font-size:16px"><a href="https://chaoyi-wu.github.io/">Chaoyi Wu<sup>*</sup></a><sup>1,2</sup></span>
+          </center>
+        </td>
+        <td align="center" width="180px">
+          <center>
+            <span style="font-size:16px"><a href="https://xiaoman-zhang.github.io/">Xiaoman Zhang</a><sup>1,2</sup></span>
+          </center>
+        </td>
+        <td align="center" width="180px">
+          <center>
+            <span style="font-size:16px"><a href="">Weixiong Lin</a><sup>1,2</sup></span>
+          </center>
+        </td>
+        <td align="center" width="180px">
+          <center>
+            <span style="font-size:16px"><a href="">Haicheng Wang</a><sup>1</sup></span>
+          </center>
+        </td>
+        <td align="center" width="180px">
+          <center>
+            <span style="font-size:16px"><a href="https://mediabrain.sjtu.edu.cn/yazhang/">Ya Zhang</a><sup>1,2</sup></span>
+          </center>
+        </td>
+        <td align="center" width="180px">
+
+
+          <center>
+            <span style="font-size:16px"><a href="https://mediabrain.sjtu.edu.cn/">Yanfeng Wang</a><sup>1,2</sup></span>
+          </center>
+        </td>
+        <td align="center" width="180px">
+          <center>
+            <span style="font-size:16px"><a href="https://weidixie.github.io/">Weidi Xie</a><sup>1,2</sup></span>
+        </td>
+        <td align="center" width="180px">
+          </center>
+
+      </tr>
+    </tbody>
+  </table><br>
+
+  <table align="center" width="700px">
+    <tbody>
+      <tr>
+        <td align="center" width="50px">
+          <center>
+            <span style="font-size:16px"></span>
+          </center>
+        </td>
+        <td align="center" width="300px">
+          <center>
+            <span style="font-size:16px"><sup>1</sup>CMIC, Shanghai Jiao Tong University</span>
+          </center>
+        </td>
+        <td align="center" width="300px">
+          <center>
+            <span style="font-size:16px"><sup>2</sup>Shanghai AI Laboratory</span>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table align="center" width="700px">
+    <tbody>
+      <tr>
+        <td align="center" width="200px">
+          <center>
+            <br>
+            <span style="font-size:20px">Code
+              <a href="https://github.com/MAGIC-AI4Med/MMedLM"> [GitHub]</a>
+            </span>
+          </center>
+        </td>
+
+        <td align="center" width="200px">
+          <center>
+            <br>
+            <span style="font-size:20px">
+              Paper <a href="https://arxiv.org/abs/2402.13963"> [arXiv]</a>
+            </span>
+          </center>
+        </td>
+
+        <td align="center" width="200px">
+          <center>
+            <br>
+            <span style="font-size:20px">
+              Cite <a href="./cite.txt"> [BibTeX]</a>
+            </span>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <hr>
+  <!-- <center><h2> Abstract </h2> </center>
+      <p style="text-align:justify; text-justify:inter-ideograph;">
+      <left>
+        In this paper, we consider the problem of enhancing self-supervised visual-language pre-training~(VLP) with medical-specific knowledge, 
+        by exploiting the paired image-text reports from the radiological daily practice.
+        In particular, we make the following contributions:
+        <i>First</i>, unlike existing works that directly process the raw reports,
+        we adopt a novel report pre-processing mechanism by simply extracting the useful medical entities, avoiding unnecessary complexity from understanding the language grammar;
+        <i>Second</i>, we propose a novel entity embedding module by querying an external knowledge description base, to exploit the rich context of additional information that the medical domain affords, and implicitly build relationships between entities in the language embedding space;
+        <i> Third</i>, we propose a novel Transformer-based fusion model for spatially aligning the entity description with visual signals at the image patch level only with self-supervised learning, thus enabling the ability for spatial grounding;
+        <i> Fourth</i>, we conduct thorough experiments to validate the effectiveness of our proposed architecture, and benchmark on numerous public benchmarks {\em e.g.}, ChestX-ray14, 
+        RSNA Pneumonia, SIIM-ACR Pneumothorax, COVIDx CXR-2, COVID Rural, and EdemaSeverity. 
+        In both zero-shot and fine-tuning settings, our model has demonstrated strong performance compared with the former methods on disease classification and grounding.
+      </center></p>
+      <p><img class="center"  src="./resources/Method.png" width="800px"></p> -->
+
+  <center>
+    <h2> Abstract </h2>
+  </center>
+  <div class="text" width="800px">
+    <p style="text-align:justify; text-justify:inter-ideograph;">
+      <left>
+        The development of open-source, multilingual medical language models can benefit a wide, linguistically diverse audience from different regions. To promote this domain, we present contributions from the following: First, we construct a multilingual medical corpus, containing approximately 25.5B tokens encompassing 6 main languages, termed as MMedC, enabling auto-regressive domain adaptation for general LLMs; Second, to monitor the development of multilingual medical LLMs, we propose a multilingual medical multi-choice question-answering benchmark with rationale, termed as MMedBench; Third, we have assessed a number of open-source large language models (LLMs) on our benchmark, along with those further auto-regressive trained on MMedC. Our final model, MMed-Llama 3, with only 8B parameters, achieves superior performance compared to all other open-source models on both MMedBench and English benchmarks, even rivaling GPT-4. In conclusion, in this work, we present a large-scale corpus, a benchmark and a series of models to support the development of multilingual medical LLMs.
+    </p>
+  </div>
+  <div class="image" width="800px">
+    <img style="width:800px" src='./resources/tissue.png'></img>
+  </div>
+  <br>
+  <hr>
+  <center>
+    <h2> Pre-training Corpus Construction </h2>
+  </center>
+  <p style="text-align:justify; text-justify:inter-ideograph;">
+    <left>
+      Overview of our multilingual medical corpus (MMedC). This vast pre-training corpus
+      contains over 25.5B tokens and encompasses 6 main languages, which greatly compensates for
+      the lack of multilingual medical corpus.
+      
+      In detail, Sub-figure (a) illustrates that MMedC collectively covers a significant portion of the global population.
+      Subsequently, Sub-figure (b) presents a detailed breakdown of the token distribution across these languages.
+      Lastly, Sub-figure (c) delineates the contribution of four distinct sources to our dataset across different languages.
+
+    </left>
+  </p>
+  <p><img class="left" src="./resources/corpus_construction.png" width="800px"></p>
+
+  <br>
+  <hr>
+  <center>
+    <h2>Medical Benchmark Construction</h2>
+  </center>
+
+  <p>
+    <left>
+      For better evaluation of models' performance in the medical domain across diverse languages, we 
+      collect a comprehensive Multilingual Medical Benchmark (MMedBench), spanning 6 principal languages. 
+      Specifically, we started by collecting existing medical question-answering benchmarks for each language, and expand these multi-choice QA
+      with corresponding explanations using GPT-4, followed by strict human verification to ensure the correctness
+      of contents.
+    </left>
+  </p>
+  <p><img class="center" src="./resources/MMedBench_construction.png" width="800px"></p>
+  <p> 
+    MMedBench finally includes 45048 samples for training and 8518 samples for testing. Sub-figure (a) illustrates the detailed fundamental characteristics,
+    and Sub-figure (b) showcases the diversity of our multilingual benchmark, spanning a wide array of medical questions
+    from foundational clinical medicine to specialized areas such as pharmacology and public health, with a
+    pronounced emphasis on areas like Internal Medicine and Biochemistry. 
+  </p>
+  <p><img class="center" src="./resources/MMedBench_stastics.png" width="800px"></p>
+
+  <br>
+  <hr>
+
+  <center>
+    <h2>Final Results</h2>
+  </center>
+
+  <p><left>we present a comprehensive benchmark of the foremost LLMs using our MMedBench under
+    zero-shot, PEFT, and full fine-tuning settings. Our evaluation focuses on two aspects of model performance:
+    the accuracy in multiple-choice questions and the models’ ability to generate rationales.
+  </left></p>
+
+  <p><b>
+      <h3>Accuracy on MMedBench</h3>
+    </b> </p>
+  <p>
+    <left>
+      Accuracy of different LLMs on MMedBench. Our final model, MMed-Llama 3 demonstrate significant
+      improvements over it’s counterparts without further training on MMedC and refers to the most 
+      competitive open-source model with 8B parameters in proximity to GPT-4, showcasing its exceptional 
+      capabilities across languages in medical domain.
+    </left>
+  </p>
+  <p><img class="center" src="./resources/AccuracyEvaluation.png" width="800px"></p>
+
+
+  <p><b>
+    <h3>Accuracy on Common English Benchmarks</h3>
+  </b> </p>
+<p>
+  <left>
+    We furhter compare the performance of our model on common English benchmarks with other existing models.
+    Although MMed-Llama 3 is designed for multilingualism, it also demonstrates state-of-the-art performance 
+    on English benchmarks.
+  </left>
+</p>
+<p><img class="center" src="./resources/EnglishBenchmarkEvaluation.png" width="800px"></p>
+
+  <p><b>
+      <h3>Rationale Evaluation on MMedBench</h3>
+    </b> </p>
+
+  <p>
+    <left>
+      Our study extends to examining the rationale ability of various LLMs, enabling a clear assessment of its reasoning capabilities.
+    </left>
+  </p>
+  <p><img class="center" src="./resources/RationaleEvaluation.png" width="800px"></p>
+
+  <p>
+    <left>
+      Given the limitations of automatic metrics in evaluating free-text generation, we further employ relative human rating.
+      Sub-figure (a) illustrates the comparative analysis of model performances through relative ratings, while 
+      Sub-figure (b) delves into the correlation between various automatic evaluation metrics and human preferences. 
+
+    </left>
+  </p>
+  <p><img class="center" src="./resources/HumanCorrelation.png" width="800px"></p>
+
+
+  <br>
+  <hr>
+  <center>
+    <h2>Conclusion</h2>
+  </center>
+  <p>
+    <left>
+      In conclusion, in this paper, we describe an automatic pipeline for building up a new multilingual medical corpus together
+      with a new benchmark. Specifically, we developed MMedC, a large-scale medical corpus with 25.5B tokens
+      covering six main languages, and MMedBench, a comprehensive benchmark encompassing 6 primary languages.
+      To monitor the development progress of medical multilingual LLMs, we have evaluated eleven existing LLMs on
+      multi-choice question-answering and rationale generation abilities under various settings. Experimentally, we
+      demonstrate the effectiveness of further training on MMedC, significantly filling the gap in adapting advanced
+      general multilingual LLMs into complex and professional medical domain. As a result, we open-source the
+      MMed-Llama 3, which to our knowledge, denotes the first, and strongest multilingual language model for
+      medicine, also demonstrating impressive performance in various English benchmarks
+    </left>
+  </p>
+</body>
+
+</html>
