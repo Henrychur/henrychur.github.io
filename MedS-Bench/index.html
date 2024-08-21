@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Medical Multilingual Benchmark</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+  <!-- jQuery -->
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+  <!-- DataTables -->
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+  <link href="css/styles.css" rel="stylesheet" />
+
+  
+
+</head>
+
+
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+      <!-- <a class="navbar-brand" href="https://ai4med.sjtu.edu.cn/">
+        <img src="../images/AI4Med_logo.png" alt="AI4Med Logo" style="width: 60%;">
+      </a> -->
+      <a class="navbar-brand">
+        MedS-Bench
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <!-- <li class="nav-item"><a class="nav-link" href="#about">Blog</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="">GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Huggingface</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header-->
+  <header class="bg-primary bg-gradient text-white">
+    <div class="container px-4 text-center">
+      <h1 class="fw-bolder">MedS-Bench</h1>
+      <p class="lead">A 11-tasks Medical-oriented Leaderboard for Language Model</p>
+      <!-- <a class="btn btn-lg btn-light" href="#about">Start !</a> -->
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container" id="main">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title">What Is MedS-Ins</h4>
+            <p class="card-text">MedS-Bench is a comprehensive medical evaluation benchmark designed to
+              assess the capabilities of various Large Language Models in the medical field beyond
+              just multiple-choice questions. It encompasses 11 task categories and integrates 39 existing datasets.
+              For each dataset, MedS-Bench transforms the data into formats suitable for LLMs.
+              This process involves manually writing clear task definitions, known as Instructions,
+              to guide the models in understanding and responding to the medical data effectively.
+              Our leaderboard provide a comparative analysis for evaluating the versatility and depth of LLMs in
+              handling complex, domain-specific challenges in medicine. </p>
+
+            <p class="card-text">For more details about MedS-Bench, please refer to this paper:</p>
+            <div class="text-center">
+              <a href="" class="btn btn-custom">Towards Evaluating and Building Versatile Large Language
+                Models for Medicine (Arxiv)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title">Submission</h4>
+            <p class="card-text">Comming Soon...</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Medical Multi-choice Question Answering
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Medical Multiple-choice Answering</h5>
+        <p class="card-text">This table presents a comprehensive comparison of various models on widely used multiple-choice
+          question benchmarks in the medical domain.</p>
+        <div class="scrollable-container">
+          <table id="resultsTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>MedQA</th>
+                <th>MedMCQA</th>
+                <th>PubMedQA</th>
+                <th>MMedBench(ZH)</th>
+                <th>MMedBench(JA)</th>
+                <th>MMedBench(FR)</th>
+                <th>MMedBench(RU)</th>
+                <th>MMedBench(ES)</th>
+                <th>Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-3.5</td>
+                <td>57.7</td>
+                <td>72.7</td>
+                <td>53.8</td>
+                <td>52.3</td>
+                <td>34.6</td>
+                <td>32.5</td>
+                <td>66.4</td>
+                <td>66.1</td>
+                <td>54.5</td>
+              </tr>
+              <tr>
+                <td>GPT-4</td>
+                <td>85.8</td>
+                <td>72.3</td>
+                <td>70.0</td>
+                <td>75.1</td>
+                <td>72.9</td>
+                <td>56.6</td>
+                <td>83.6</td>
+                <td>85.7</td>
+                <td>75.3</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>47.9</td>
+                <td>59.2</td>
+                <td>74.4</td>
+                <td>61.9</td>
+                <td>40.2</td>
+                <td>35.1</td>
+                <td>67.6</td>
+                <td>53.3</td>
+                <td>54.9</td>
+              </tr>
+              <tr>
+                <td>Internlm2</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>77.6</td>
+                <td>47.7</td>
+                <td>41.0</td>
+                <td>68.4</td>
+                <td>59.6</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>50.8</td>
+                <td>48.2</td>
+                <td>75.4</td>
+                <td>71.1</td>
+                <td>44.7</td>
+                <td>48.7</td>
+                <td>74.2</td>
+                <td>63.9</td>
+                <td>49.1</td>
+              </tr>
+              <tr>
+                <td>Llama3</td>
+                <td>60.9</td>
+                <td>50.7</td>
+                <td>73.0</td>
+                <td>78.2</td>
+                <td>48.2</td>
+                <td>50.8</td>
+                <td>71.5</td>
+                <td>64.2</td>
+                <td>62.2</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>63.6</td>
+                <td>57.1</td>
+                <td>78.2</td>
+                <td>78.6</td>
+                <td>54.3</td>
+                <td>46.0</td>
+                <td>72.3</td>
+                <td>61.2</td>
+                <td>63.9</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Text Summarization
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Text Summarization</h5>
+        <p class="card-text">This table showcases the performance of various models in text summarization tasks across
+          different datasets, measured by BLEU and ROUGE metrics. </p>
+        <div class="scrollable-container">
+          <table id="summaryResultsTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>MedQSum</th>
+                <th>RCT-Text</th>
+                <th>MIMIC-CXR</th>
+                <th>MIMICIV(Ultrasound)</th>
+                <th>MIMICIV(CT)</th>
+                <th>MIMICIV(MRI)</th>
+                <th>Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>25.06/27.30</td>
+                <td>34.32/31.09</td>
+                <td>27.26/29.71</td>
+                <td>11.17/14.53</td>
+                <td>23.97/29.52</td>
+                <td>25.76/32.06</td>
+                <td>24.46/25.66</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>21.14/25.06</td>
+                <td>41.02/36.16</td>
+                <td>27.76/29.93</td>
+                <td>15.24/18.28</td>
+                <td>21.98/26.38</td>
+                <td>26.43/31.05</td>
+                <td>26.29/27.36</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>15.64/23.14</td>
+                <td>-/16.44</td>
+                <td>-/16.50</td>
+                <td>-/6.07</td>
+                <td>16.30/23.93</td>
+                <td>20.11/27.98</td>
+                <td>-/15.54</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>15.69/21.63</td>
+                <td>14.48/15.16</td>
+                <td>11.83/13.41</td>
+                <td>13.48/20.96</td>
+                <td>20.88/27.82</td>
+                <td>23.43/31.40</td>
+                <td>13.87/17.79</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>23.49/26.03</td>
+                <td>27.24/26.13</td>
+                <td>22.09/24.71</td>
+                <td>25.09/22.72</td>
+                <td>27.60/30.77</td>
+                <td>29.87/31.81</td>
+                <td>24.48/24.90</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>22.45/25.08</td>
+                <td>15.38/14.60</td>
+                <td>32.92/32.64</td>
+                <td>18.06/20.00</td>
+                <td>24.47/29.35</td>
+                <td>24.82/30.50</td>
+                <td>22.20/23.08</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>54.16/56.95</td>
+                <td>57.82/55.60</td>
+                <td>54.91/57.64</td>
+                <td>20.40/23.32</td>
+                <td>42.18/46.46</td>
+                <td>40.53/43.38</td>
+                <td>46.82/48.38</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Information Extraction
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Information Extraction</h5>
+        <p class="card-text">This table showcases the performance of various models in Information Extraction tasks, using accuracy as the metric.
+          In the table, the "Ext." represents extraction and "Info." denotes information. 
+        </p>
+        <div class="scrollable-container">
+          <table id="infoExtractionTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>PICO Participant Ext.</th>
+                <th>PICO Intervention Ext.</th>
+                <th>PICO Outcome Ext.</th>
+                <th>ADE Drug Dose Ext.</th>
+                <th>PMC-patient Basic Info. Ext.</th>
+                <th>Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>72.73</td>
+                <td>72.09</td>
+                <td>67.44</td>
+                <td>79.17</td>
+                <td>96</td>
+                <td>77.49</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>67.44</td>
+                <td>74.42</td>
+                <td>67.44</td>
+                <td>86.96</td>
+                <td>98</td>
+                <td>78.86</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>62.79</td>
+                <td>53.49</td>
+                <td>60.47</td>
+                <td>73.91</td>
+                <td>68</td>
+                <td>63.73</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>74.42</td>
+                <td>79.07</td>
+                <td>76.74</td>
+                <td>95.65</td>
+                <td>82</td>
+                <td>81.58</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>65.12</td>
+                <td>74.42</td>
+                <td>60.47</td>
+                <td>91.30</td>
+                <td>94</td>
+                <td>77.06</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>62.79</td>
+                <td>62.79</td>
+                <td>58.14</td>
+                <td>91.30</td>
+                <td>90</td>
+                <td>73.01</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>83.72</td>
+                <td>76.74</td>
+                <td>62.79</td>
+                <td>95.65</td>
+                <td>97</td>
+                <td>83.18</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Concept Explanation and Ratioanle
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Concept Explanation</h5>
+        <p class="card-text">This table provides the BLEU and ROUGE metrics for various language models on medical
+          concept explanation tasks.</p>
+        <div class="scrollable-container">
+          <table id="medicalConceptTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Health Fact Exp.</th>
+                <th>Do Entity Exp.</th>
+                <th>BioLORD Concept Exp.</th>
+                <th>Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>18.27/20.45</td>
+                <td>20.69/22.85</td>
+                <td>18.59/20.69</td>
+                <td>19.18/21.33</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>14.55/19.61</td>
+                <td>11.74/17.08</td>
+                <td>18.05/21.19</td>
+                <td>14.78/19.29</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>12.48/18.83</td>
+                <td>-/25.89</td>
+                <td>12.96/23.27</td>
+                <td>11.21/22.66</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>22.40/27.18</td>
+                <td>-/12.69</td>
+                <td>12.01/16.91</td>
+                <td>13.56/18.93</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>20.47/21.55</td>
+                <td>20.94/24.13</td>
+                <td>22.01/24.33</td>
+                <td>21.14/23.33</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>17.81/24.00</td>
+                <td>17.34/21.66</td>
+                <td>22.18/22.79</td>
+                <td>19.11/22.82</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>35.56/32.32</td>
+                <td>33.74/40.34</td>
+                <td>32.36/40.39</td>
+                <td>33.89/37.68</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Rationale</h5>
+        <p class="card-text">This table evaluates various language models using BLEU and ROUGE metrics on rationale
+          generation tasks.</p>
+        <div class="scrollable-container">
+          <table id="rationaleResultsTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>MMedBench(ZH)</th>
+                <th>MMedBench(EN)</th>
+                <th>MMedBench(FR)</th>
+                <th>MMedBench(JA)</th>
+                <th>MMedBench(RU)</th>
+                <th>MMedBench(ES)</th>
+                <th>Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>45.77/35.79</td>
+                <td>46.37/39.57</td>
+                <td>49.28/41.04</td>
+                <td>46.65/40.56</td>
+                <td>38.49/28.50</td>
+                <td>49.64/40.45</td>
+                <td>46.03/37.65</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>20.18/20.76</td>
+                <td>39.50/30.88</td>
+                <td>35.01/29.36</td>
+                <td>21.41/26.46</td>
+                <td>26.56/20.99</td>
+                <td>37.49/30.17</td>
+                <td>30.03/26.44</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>36.66/30.52</td>
+                <td>44.62/39.36</td>
+                <td>36.50/34.21</td>
+                <td>29.10/34.77</td>
+                <td>27.97/23.24</td>
+                <td>41.97/36.13</td>
+                <td>36.14/33.04</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>33.71/27.83</td>
+                <td>44.86/38.75</td>
+                <td>23.68/22.22</td>
+                <td>-/12.92</td>
+                <td>31.92/24.69</td>
+                <td>32.33/28.04</td>
+                <td>29.32/25.74</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>34.98/28.34</td>
+                <td>47.29/37.06</td>
+                <td>38.48/35.04</td>
+                <td>29.08/27.50</td>
+                <td>32.10/24.94</td>
+                <td>43.74/36.39</td>
+                <td>37.61/31.55</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>51.50/35.35</td>
+                <td>48.54/38.22</td>
+                <td>47.64/39.24</td>
+                <td>53.31/36.83</td>
+                <td>34.91/23.71</td>
+                <td>47.08/36.42</td>
+                <td>47.17/34.96</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Name Entity Recognition (NER)
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for NER</h5>
+        <p class="card-text">This table displays the F1-Score metrics for various language models across multiple NER
+          tasks, highlighting their ability to recognize chemical, disease, and organism entities.</p>
+        <div class="scrollable-container">
+          <table id="nerResultsTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>BC4Chem</th>
+                <th>BC5Chem</th>
+                <th>BC5Disease</th>
+                <th>Species800</th>
+                <th>Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>47.41</td>
+                <td>63.77</td>
+                <td>35.77</td>
+                <td>30.26</td>
+                <td>44.30</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>30.77</td>
+                <td>48.61</td>
+                <td>27.14</td>
+                <td>9.88</td>
+                <td>29.10</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>0.83</td>
+                <td>6.53</td>
+                <td>2.45</td>
+                <td>0.80</td>
+                <td>2.65</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>32.79</td>
+                <td>50.39</td>
+                <td>42.02</td>
+                <td>38.03</td>
+                <td>40.81</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>24.62</td>
+                <td>42.55</td>
+                <td>24.00</td>
+                <td>7.64</td>
+                <td>24.70</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>21.48</td>
+                <td>41.48</td>
+                <td>13.25</td>
+                <td>4.21</td>
+                <td>20.10</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>78.62</td>
+                <td>89.71</td>
+                <td>51.97</td>
+                <td>54.02</td>
+                <td>68.58</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Diagnosis
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Diagnosis</h5>
+        <p class="card-text">This table showcases the performance of various models in diagnosis. The dataset, DDXPlus utilizes a predefined list of diseases, 
+          from which models must select one based on the provided patient context. In this task, accuracy is used as the metric.
+        </p>
+        <div class="scrollable-container">
+          <table id="DiagnosisResultTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>DDXPlus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>52</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>48</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>24</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>28</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>95</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Treatment Planning
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Treatment Planning</h5>
+        <p class="card-text">This table showcases the performance of various models in treatment planning. In the dataset, SEER, \
+          treatment recommendations are categorized into eight high-level types. Accuracy is used as the metric.</p>
+        <div class="scrollable-container">
+          <table id="TreatmentPlanningResultTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>SEER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>78</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>60</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>68</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>52</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>36</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>98</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Clinical Outcome Prediction
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Clinical Outcome Prediction</h5>
+        <p class="card-text">This table showcases the performance of various models in tlinical outcome prediction across different datasets.</p>
+        <div class="scrollable-container">
+          <table id="ClinicalOutcomePredictionResultTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>MIMIC4ED(Hospitalization)</th>
+                <th>MIMIC4ED(72h ED Revisit)</th>
+                <th>MIMIC4ED(Critical Triage)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>62</td>
+                <td>69</td>
+                <td>65.69</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>64</td>
+                <td>63</td>
+                <td>57.43</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>36</td>
+                <td>4</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>60</td>
+                <td>76</td>
+                <td>69</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>51</td>
+                <td>4</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>58</td>
+                <td>39</td>
+                <td>43</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>69</td>
+                <td>97</td>
+                <td>94</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Text Classification
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Text Classification</h5>
+        <p class="card-text">This table showcases the performance of various models in Text Classification.
+          The dataset used is HoC, which is designed for multi-label classsification. The metrics used are precision, recall, and F1 score.
+        </p>
+        <div class="scrollable-container">
+          <table id="resultsTable2" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>HoC Precision</th>
+                <th>HoC Recall</th>
+                <th>HoC F1_score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>55.07</td>
+                <td>72.37</td>
+                <td>60.38</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>55.18</td>
+                <td>80.96</td>
+                <td>63.32</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>23.39</td>
+                <td>36.85</td>
+                <td>26.21</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>22.97</td>
+                <td>83.16</td>
+                <td>32.72</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>26.6</td>
+                <td>69.59</td>
+                <td>36.18</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>35.18</td>
+                <td>59.27</td>
+                <td>40.80</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>91.29</td>
+                <td>85.57</td>
+                <td>87.37</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Fact Verification
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for Fact Verification</h5>
+        <p class="card-text">This table details the performance of various models on fact verification. 
+          For PubMedQA Answer Verification and HealthFact Verification, the LLMs is tasked to select a single answer from a list of provided candidates, 
+          with accuracy employed as the evaluation metric. Conversely, for EBMS Justification Verification, which requires the LLMs to generate free-form text, 
+          performance is assessed using BLEU and ROUGE metrics.
+        </p>
+        <div class="scrollable-container">
+          <table id="factVerificationResultsTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>PubMedQA Answer Ver.</th>
+                <th>PUBLICHEALTH Health Fact Ver.</th>
+                <th>EMBS Justification Ver.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>52</td>
+                <td>76</td>
+                <td>16.36/16.33</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>4</td>
+                <td>64</td>
+                <td>14.22/15.82</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>26</td>
+                <td>40</td>
+                <td>10.86/13.73</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>98</td>
+                <td>92</td>
+                <td>-/15.10</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>94</td>
+                <td>64</td>
+                <td>12.96/14.37</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>54</td>
+                <td>68</td>
+                <td>15.19/15.56</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>98</td>
+                <td>92</td>
+                <td>11.99/12.90</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Natural Language Inference (NLI)
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard for NLI</h5>
+        <p class="card-text">The results are measured with accuracy for the discriminative tasks~(selecting the right answer from a list of candidates) 
+          and BLEU/ROUGE metrics for the generative tasks~(generating free-form text answers).</p>
+        <div class="scrollable-container">
+          <table id="NLIResultsTable" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>MedNLI Discriminative Task</th>
+                <th>MedNLI Generative Task</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>82</td>
+                <td>27.09/23.71</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5</td>
+                <td>86</td>
+                <td>17.73/16.70</td>
+              </tr>
+              <tr>
+                <td>MEDITRON</td>
+                <td>66</td>
+                <td>-/14.27</td>
+              </tr>
+              <tr>
+                <td>InternLM 2</td>
+                <td>84</td>
+                <td>25.42/24.91</td>
+              </tr>
+              <tr>
+                <td>Llama 3</td>
+                <td>62</td>
+                <td>33.69/27.28</td>
+              </tr>
+              <tr>
+                <td>Mistral</td>
+                <td>72</td>
+                <td>20.81/19.03</td>
+              </tr>
+              <tr>
+                <td>MMedIns-Llama 3</td>
+                <td>84</td>
+                <td>37.56/32.1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <hr>
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container px-4">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <!-- TABLE -->
+  <script>
+    // Custom sort type definition for DataTables
+    $.fn.dataTable.ext.type.order['custom-number-before-slash-pre'] = function (data) {
+      var number = data.split('/')[0].trim();  // 提取字符串前半部分，并清除两边的空格
+      var parsedNumber = parseFloat(number);
+      console.log("Original data: " + data + " Parsed number: " + parsedNumber);  // 输出原始数据和解析后的数字
+      return parsedNumber || 0;  // 如果解析失败返回0
+    };
+
+    $(document).ready(function () {
+
+      // Initialize DataTables for various tables
+      // $('#summaryResultsTable').DataTable({
+      //   "columnDefs": [
+      //     {
+      //       "type": "custom-number-before-slash-pre",  // 使用自定义的排序类型
+      //       "targets": [1, 2, 3, 4, 5, 6, 7]  // 指定需要自定义排序的列
+      //     }
+      //   ]
+      // });
+
+      $('#resultsTable').DataTable();
+      $('#resultsTable2').DataTable();
+      $('#infoExtractionTable').DataTable();
+      $('#medicalConceptTable').DataTable();
+      $('#rationaleResultsTable').DataTable();
+      $('#nerResultsTable').DataTable();
+      $('#factVerificationResultsTable').DataTable();
+      $('#NLIResultsTable').DataTable();
+      $('#summaryResultsTable').DataTable();
+      $('#DiagnosisResultTable').DataTable();
+      $('#TreatmentPlanningResultTable').DataTable();
+      $('#ClinicalOutcomePredictionResultTable').DataTable();
+        
+    });
+  </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
