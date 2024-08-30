@@ -5296,7 +5296,8 @@ textarea.form-control-lg {
   overflow: hidden;
 }
 .modal-dialog-scrollable .modal-body {
-  overflow-y: auto;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
 }
 
 .modal-dialog-centered {
@@ -10901,4 +10902,10 @@ header {
 .table-responsive {
   width: 100%;
   min-width: 800px; /* 根据表格内容调整最小宽度 */
+}
+
+
+.specific-height {
+  height: 530px; /* 或根据你的具体需求调整高度 */
+  overflow: auto; /* 允许内容滚动 */
 }
