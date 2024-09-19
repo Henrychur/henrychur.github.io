@@ -25,7 +25,7 @@
 
   <link href="css/styles.css" rel="stylesheet" />
 
-  
+
 
 </head>
 
@@ -47,7 +47,8 @@
         <ul class="navbar-nav ms-auto">
           <!-- <li class="nav-item"><a class="nav-link" href="#about">Blog</a></li> -->
           <li class="nav-item"><a class="nav-link" href="https://github.com/MAGIC-AI4Med/MedS-Ins">GitHub</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://huggingface.co/datasets/Henrychur/MedS-Bench">Huggingface</a></li>
+          <li class="nav-item"><a class="nav-link"
+              href="https://huggingface.co/datasets/Henrychur/MedS-Bench">Huggingface</a></li>
         </ul>
       </div>
     </div>
@@ -79,7 +80,8 @@
 
             <p class="card-text">For more details about MedS-Bench, please refer to this paper:</p>
             <div class="text-center">
-              <a href="https://arxiv.org/abs/2408.12547" class="btn btn-custom">Towards Evaluating and Building Versatile Large Language
+              <a href="https://arxiv.org/abs/2408.12547" class="btn btn-custom">Towards Evaluating and Building
+                Versatile Large Language
                 Models for Medicine (Arxiv)</a>
             </div>
           </div>
@@ -117,19 +119,25 @@
         <div class="card mb-3 specific-height">
           <div class="card-body">
             <h4 class="card-title">Submission</h4>
-            <p class="card-text">We invite you to submit your model's results to our Leaderboard. The evaluation code is now available for your reference. 
-              <div class="text-center">
-                <a href="https://github.com/MAGIC-AI4Med/MedS-Ins/tree/main/Evaluation" class="btn btn-custom">Evaluation Code</a>
-            </div>                
-              <br>You can either submit your model for our team to evaluate or simply provide the CSV result file. 
-              <br>For detailed instructions, please refer to the detailed submission tutorial.</p>
+            <p class="card-text">We invite you to submit your model's results to our Leaderboard. The evaluation code is
+              now available for your reference.
             <div class="text-center">
-                <a href="https://github.com/MAGIC-AI4Med/MedS-Ins/blob/main/examples/model_submission_tutorial.md" class="btn btn-custom">Submission Tutorial</a>
+              <a href="https://github.com/MAGIC-AI4Med/MedS-Ins/tree/main/Evaluation" class="btn btn-custom">Evaluation
+                Code</a>
             </div>
-            <br>We strongly acknowledge any volunteer to contribute data into our dataset. You can check the following guideline to see how to contribute data and we will thank each participant in writing in next updating of our paper! </p>
+            <br>You can either submit your model for our team to evaluate or simply provide the CSV result file.
+            <br>For detailed instructions, please refer to the detailed submission tutorial.</p>
             <div class="text-center">
-              <a href="https://github.com/MAGIC-AI4Med/MedS-Ins/blob/main/DATA_Contributor/Data_Uploading_Guideline.md" class="btn btn-custom">Data Contribution</a>
-          </div>
+              <a href="https://github.com/MAGIC-AI4Med/MedS-Ins/blob/main/examples/model_submission_tutorial.md"
+                class="btn btn-custom">Submission Tutorial</a>
+            </div>
+            <br>We strongly acknowledge any volunteer to contribute data into our dataset. You can check the following
+            guideline to see how to contribute data and we will thank each participant in writing in next updating of
+            our paper! </p>
+            <div class="text-center">
+              <a href="https://github.com/MAGIC-AI4Med/MedS-Ins/blob/main/DATA_Contributor/Data_Uploading_Guideline.md"
+                class="btn btn-custom">Data Contribution</a>
+            </div>
           </div>
         </div>
       </div>
@@ -137,120 +145,121 @@
         <div class="card mb-3 specific-height">
           <div class="card-body">
             <h5 class="card-title">Overview Model Evaluation</h5>
-            <p class="card-text">The table shows the average performance of the model on each Benchmark task. 
-              The metrics used are Accuracy or BLEU/ROUGE. Note that the last two tasks(Fact Verification and NLI) 
-              do not appear in this table because they use multiple different metrics and cannot calculate the average score.</p>
+            <p class="card-text">The table shows the average performance of the model on each Benchmark task.
+              The metrics used are Accuracy or BLEU/ROUGE. Note that the last two tasks(Fact Verification and NLI)
+              do not appear in this table because they use multiple different metrics and cannot calculate the average
+              score.</p>
             <div class="scrollable-container">
               <table id="OverviewTable" class="display" style="width:100%">
                 <thead>
                   <tr>
-                      <th>Method</th>
-                      <th>MCQA</th>
-                      <th>Text Summarization</th>
-                      <th>Information Extraction</th>
-                      <th>Concept Explanation</th>
-                      <th>Rationale</th>
-                      <th>NER</th>
-                      <th>Diagnosis</th>
-                      <th>Treatment planning</th>
-                      <th>Clinical Outcome Prediction</th>
-                      <th>Text classification(F1)</th>
+                    <th>Method</th>
+                    <th>MCQA</th>
+                    <th>Text Summarization</th>
+                    <th>Information Extraction</th>
+                    <th>Concept Explanation</th>
+                    <th>Rationale</th>
+                    <th>NER</th>
+                    <th>Diagnosis</th>
+                    <th>Treatment planning</th>
+                    <th>Clinical Outcome Prediction</th>
+                    <th>Text classification(F1)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                      <td>GPT-4</td>
-                      <td>75.3</td>
-                      <td>24.46/25.66</td>
-                      <td>77.49</td>
-                      <td>19.18/21.33</td>
-                      <td>-</td>
-                      <td>44.3</td>
-                      <td>52</td>
-                      <td>78.00</td>
-                      <td>65.56</td>
-                      <td>60.38</td>
+                    <td>GPT-4</td>
+                    <td>75.3</td>
+                    <td>24.46/25.66</td>
+                    <td>76.92</td>
+                    <td>19.37/21.58</td>
+                    <td>-</td>
+                    <td>59.52</td>
+                    <td>58.13</td>
+                    <td>84.73</td>
+                    <td>59.80</td>
+                    <td>68.06</td>
                   </tr>
                   <tr>
-                      <td>Claude-3.5</td>
-                      <td>-</td>
-                      <td>26.29/27.36</td>
-                      <td>78.86</td>
-                      <td>14.78/19.29</td>
-                      <td>46.03/37.65</td>
-                      <td>29.10</td>
-                      <td>48</td>
-                      <td>90</td>
-                      <td>61.48</td>
-                      <td>63.32</td>
+                    <td>Claude-3.5</td>
+                    <td>-</td>
+                    <td>26.29/27.36</td>
+                    <td>79.41</td>
+                    <td>12.56/16.75</td>
+                    <td>46.26/36.97</td>
+                    <td>25.56</td>
+                    <td>60.24</td>
+                    <td>92.93</td>
+                    <td>64.08</td>
+                    <td>66.74</td>
                   </tr>
                   <tr>
-                      <td>MEDITRON</td>
-                      <td>54.9</td>
-                      <td>7.15/15.54</td>
-                      <td>63.73</td>
-                      <td>11.21/22.66</td>
-                      <td>30.03/26.44</td>
-                      <td>-</td>
-                      <td>24</td>
-                      <td>60</td>
-                      <td>17</td>
-                      <td>26.21</td>
+                    <td>MEDITRON</td>
+                    <td>54.9</td>
+                    <td>7.15/15.54</td>
+                    <td>67.52</td>
+                    <td>8.51/18.90</td>
+                    <td>29.01/25.86</td>
+                    <td>-</td>
+                    <td>29.53</td>
+                    <td>68.27</td>
+                    <td>50.14</td>
+                    <td>23.70</td>
                   </tr>
                   <tr>
-                      <td>InternLM2</td>
-                      <td>-</td>
-                      <td>13.87/17.79</td>
-                      <td>81.58</td>
-                      <td>13.56/18.93</td>
-                      <td>36.14/33.04</td>
-                      <td>40.81</td>
-                      <td>32</td>
-                      <td>68</td>
-                      <td>68.33</td>
-                      <td>32.72</td>
+                    <td>InternLM2</td>
+                    <td>-</td>
+                    <td>13.87/17.79</td>
+                    <td>79.11</td>
+                    <td>11.53/17.01</td>
+                    <td>35.65/32.04</td>
+                    <td>45.69</td>
+                    <td>35.20</td>
+                    <td>62.33</td>
+                    <td>55.58</td>
+                    <td>31.09</td>
                   </tr>
                   <tr>
-                      <td>Mistral</td>
-                      <td>49.1</td>
-                      <td>24.48/24.90</td>
-                      <td>73.01</td>
-                      <td>19.11/22.82</td>
-                      <td>37.61/31.55</td>
-                      <td>20.1</td>
-                      <td>28</td>
-                      <td>36</td>
-                      <td>46.67</td>
-                      <td>40.8</td>
+                    <td>Mistral</td>
+                    <td>49.1</td>
+                    <td>24.48/24.90</td>
+                    <td>70.18</td>
+                    <td>13.53/17.37</td>
+                    <td>38.14/32.28</td>
+                    <td>16.53</td>
+                    <td>34.80</td>
+                    <td>38.93</td>
+                    <td>50.14</td>
+                    <td>48.73</td>
                   </tr>
                   <tr>
-                      <td>Llama 3</td>
-                      <td>62.2</td>
-                      <td>22.20/23.08</td>
-                      <td>77.06</td>
-                      <td>21.14/23.33</td>
-                      <td>29.32/25.74</td>
-                      <td>24.7</td>
-                      <td>32</td>
-                      <td>52</td>
-                      <td>19.33</td>
-                      <td>36.18</td>
+                    <td>Llama 3</td>
+                    <td>62.2</td>
+                    <td>22.20/23.08</td>
+                    <td>72.17</td>
+                    <td>13.51/17.92</td>
+                    <td>29.09/25.06</td>
+                    <td>23.62</td>
+                    <td>33.73</td>
+                    <td>56.07</td>
+                    <td>19.05</td>
+                    <td>38.37</td>
                   </tr>
                   <tr>
-                      <td>MMedIns-Llama3</td>
-                      <td>63.9</td>
-                      <td>46.82/48.38</td>
-                      <td>83.18</td>
-                      <td>33.89/37.68</td>
-                      <td>47.17/34.96</td>
-                      <td>68.58</td>
-                      <td>95</td>
-                      <td>98</td>
-                      <td>86.67</td>
-                      <td>87.37</td>
+                    <td>MMedIns-Llama3</td>
+                    <td>63.9</td>
+                    <td>46.82/48.38</td>
+                    <td>83.77</td>
+                    <td>34.43/37.47</td>
+                    <td>46.90/34.54</td>
+                    <td>79.29</td>
+                    <td>97.53</td>
+                    <td>98.47</td>
+                    <td>63.35</td>
+                    <td>86.66</td>
                   </tr>
-              </tbody>
-                         
+                </tbody>
+
               </table>
             </div>
           </div>
@@ -266,7 +275,8 @@
       </div> -->
       <div class="card-body">
         <h5 class="card-title"> Multilingual Multiple-choice Question-answering(Accuracy)</h5>
-        <p class="card-text">This table presents a comprehensive comparison of various models on widely used multiple-choice
+        <p class="card-text">This table presents a comprehensive comparison of various models on widely used
+          multiple-choice
           question benchmarks in the medical domain.</p>
         <div class="scrollable-container">
           <table id="resultsTable" class="display" style="width:100%">
@@ -485,8 +495,9 @@
       </div> -->
       <div class="card-body">
         <h5 class="card-title"> Information Extraction(Accuracy)</h5>
-        <p class="card-text">This table showcases the performance of various models in Information Extraction tasks, using accuracy as the metric.
-          In the table, the "Ext." represents extraction and "Info." denotes information. 
+        <p class="card-text">This table showcases the performance of various models in Information Extraction tasks,
+          using accuracy as the metric.
+          In the table, the "Ext." represents extraction and "Info." denotes information.
         </p>
         <div class="scrollable-container">
           <table id="infoExtractionTable" class="display" style="width:100%">
@@ -504,66 +515,66 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>72.73</td>
-                <td>72.09</td>
                 <td>67.44</td>
-                <td>79.17</td>
-                <td>96</td>
-                <td>77.49</td>
+                <td>62.79</td>
+                <td>65.12</td>
+                <td>91.30</td>
+                <td>97.93</td>
+                <td>76.92</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>67.44</td>
-                <td>74.42</td>
-                <td>67.44</td>
-                <td>86.96</td>
-                <td>98</td>
-                <td>78.86</td>
+                <td>65.12</td>
+                <td>76.74</td>
+                <td>60.47</td>
+                <td>95.65</td>
+                <td>99.07</td>
+                <td>79.41</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>62.79</td>
-                <td>53.49</td>
-                <td>60.47</td>
-                <td>73.91</td>
-                <td>68</td>
-                <td>63.73</td>
+                <td>72.09</td>
+                <td>46.51</td>
+                <td>51.16</td>
+                <td>95.65</td>
+                <td>72.20</td>
+                <td>67.52</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
+                <td>72.09</td>
                 <td>74.42</td>
-                <td>79.07</td>
-                <td>76.74</td>
+                <td>69.77</td>
                 <td>95.65</td>
-                <td>82</td>
-                <td>81.58</td>
+                <td>83.60</td>
+                <td>79.11</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>65.12</td>
-                <td>74.42</td>
-                <td>60.47</td>
-                <td>91.30</td>
-                <td>94</td>
-                <td>77.06</td>
+                <td>58.14</td>
+                <td>79.07</td>
+                <td>58.14</td>
+                <td>69.57</td>
+                <td>95.93</td>
+                <td>72.17</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>62.79</td>
-                <td>62.79</td>
-                <td>58.14</td>
+                <td>60.47</td>
+                <td>65.12</td>
+                <td>48.84</td>
                 <td>91.30</td>
-                <td>90</td>
-                <td>73.01</td>
+                <td>85.20</td>
+                <td>70.18</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
                 <td>83.72</td>
-                <td>76.74</td>
+                <td>79.07</td>
                 <td>62.79</td>
                 <td>95.65</td>
-                <td>97</td>
-                <td>83.18</td>
+                <td>97.60</td>
+                <td>83.77</td>
               </tr>
             </tbody>
           </table>
@@ -595,52 +606,52 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>18.27/20.45</td>
-                <td>20.69/22.85</td>
-                <td>18.59/20.69</td>
-                <td>19.18/21.33</td>
+                <td>18.63/20.80</td>
+                <td>19.14/21.14</td>
+                <td>20.33/22.80</td>
+                <td>19.37/21.58</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>14.55/19.61</td>
-                <td>11.74/17.08</td>
-                <td>18.05/21.19</td>
-                <td>14.78/19.29</td>
+                <td>14.96/18.48</td>
+                <td>8.75/13.28</td>
+                <td>13.95/18.49</td>
+                <td>12.56/16.75</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>12.48/18.83</td>
-                <td>-/25.89</td>
-                <td>12.96/23.27</td>
-                <td>11.21/22.66</td>
+                <td>6.09/8.65</td>
+                <td>7.68/25.39</td>
+                <td>11.76/22.66</td>
+                <td>8.51/18.90</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>22.40/27.18</td>
-                <td>-/12.69</td>
-                <td>12.01/16.91</td>
-                <td>13.56/18.93</td>
+                <td>22.36/27.01</td>
+                <td>5.28/10.39</td>
+                <td>6.95/13.62</td>
+                <td>11.53/17.01</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>20.47/21.55</td>
-                <td>20.94/24.13</td>
-                <td>22.01/24.33</td>
-                <td>21.14/23.33</td>
+                <td>16.79/20.32</td>
+                <td>14.88/18.84</td>
+                <td>8.87/14.61</td>
+                <td>13.51/17.92</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>17.81/24.00</td>
-                <td>17.34/21.66</td>
-                <td>22.18/22.79</td>
-                <td>19.11/22.82</td>
+                <td>18.11/21.31</td>
+                <td>9.21/14.11</td>
+                <td>13.27/16.68</td>
+                <td>13.53/17.37</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>35.56/32.32</td>
-                <td>33.74/40.34</td>
-                <td>32.36/40.39</td>
-                <td>33.89/37.68</td>
+                <td>30.50/28.53</td>
+                <td>34.66/39.99</td>
+                <td>38.12/43.90</td>
+                <td>34.43/37.47</td>
               </tr>
             </tbody>
           </table>
@@ -668,63 +679,63 @@
             <tbody>
               <tr>
                 <td>Claude-3.5</td>
-                <td>45.77/35.79</td>
-                <td>46.37/39.57</td>
-                <td>49.28/41.04</td>
-                <td>46.65/40.56</td>
-                <td>38.49/28.50</td>
-                <td>49.64/40.45</td>
-                <td>46.03/37.65</td>
+                <td>44.64/34.63</td>
+                <td>47.07/38.67</td>
+                <td>48.93/41.23</td>
+                <td>49.22/39.15</td>
+                <td>38.90/28.17</td>
+                <td>48.80/39.99</td>
+                <td>46.26/36.97</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>20.18/20.76</td>
-                <td>39.50/30.88</td>
-                <td>35.01/29.36</td>
-                <td>21.41/26.46</td>
-                <td>26.56/20.99</td>
-                <td>37.49/30.17</td>
-                <td>30.03/26.44</td>
+                <td>20.39/21.79</td>
+                <td>38.42/31.24</td>
+                <td>34.43/29.33</td>
+                <td>18.89/24.98</td>
+                <td>24.32/16.77</td>
+                <td>37.64/31.01</td>
+                <td>29.01/25.86</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>36.66/30.52</td>
-                <td>44.62/39.36</td>
-                <td>36.50/34.21</td>
-                <td>29.10/34.77</td>
-                <td>27.97/23.24</td>
-                <td>41.97/36.13</td>
-                <td>36.14/33.04</td>
+                <td>35.23/30.77</td>
+                <td>44.12/37.39</td>
+                <td>36.10/33.65</td>
+                <td>29.13/33.15</td>
+                <td>27.43/20.99</td>
+                <td>41.87/36.30</td>
+                <td>35.65/32.04</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>33.71/27.83</td>
-                <td>44.86/38.75</td>
-                <td>23.68/22.22</td>
-                <td>-/12.92</td>
-                <td>31.92/24.69</td>
-                <td>32.33/28.04</td>
-                <td>29.32/25.74</td>
+                <td>28.51/23.30</td>
+                <td>44.10/39.26</td>
+                <td>24.92/22.24</td>
+                <td>13.46/15.04</td>
+                <td>31.16/22.85</td>
+                <td>32.37/27.70</td>
+                <td>29.09/25.06</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>34.98/28.34</td>
-                <td>47.29/37.06</td>
-                <td>38.48/35.04</td>
-                <td>29.08/27.50</td>
-                <td>32.10/24.94</td>
-                <td>43.74/36.39</td>
-                <td>37.61/31.55</td>
+                <td>35.53/28.91</td>
+                <td>47.20/37.88</td>
+                <td>39.53/35.64</td>
+                <td>29.16/28.96</td>
+                <td>32.15/23.99</td>
+                <td>45.27/38.33</td>
+                <td>38.14/32.28</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>51.50/35.35</td>
-                <td>48.54/38.22</td>
-                <td>47.64/39.24</td>
-                <td>53.31/36.83</td>
-                <td>34.91/23.71</td>
-                <td>47.08/36.42</td>
-                <td>47.17/34.96</td>
+                <td>50.27/34.01</td>
+                <td>49.08/38.19</td>
+                <td>46.93/38.73</td>
+                <td>51.74/35.19</td>
+                <td>35.27/23.81</td>
+                <td>48.15/37.35</td>
+                <td>46.90/34.54</td>
               </tr>
             </tbody>
           </table>
@@ -758,59 +769,59 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>47.41</td>
-                <td>63.77</td>
-                <td>35.77</td>
-                <td>30.26</td>
-                <td>44.30</td>
+                <td>54.84</td>
+                <td>67.62</td>
+                <td>53.20</td>
+                <td>62.43</td>
+                <td>59.52</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>30.77</td>
-                <td>48.61</td>
-                <td>27.14</td>
-                <td>9.88</td>
-                <td>29.10</td>
+                <td>22.98</td>
+                <td>40.77</td>
+                <td>24.05</td>
+                <td>14.45</td>
+                <td>25.56</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>0.83</td>
-                <td>6.53</td>
-                <td>2.45</td>
-                <td>0.80</td>
-                <td>2.65</td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>32.79</td>
-                <td>50.39</td>
-                <td>42.02</td>
-                <td>38.03</td>
-                <td>40.81</td>
+                <td>41.21</td>
+                <td>41.51</td>
+                <td>37.11</td>
+                <td>62.93</td>
+                <td>45.69</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>24.62</td>
-                <td>42.55</td>
-                <td>24.00</td>
-                <td>7.64</td>
-                <td>24.70</td>
+                <td>19.45</td>
+                <td>37.83</td>
+                <td>25.30</td>
+                <td>11.90</td>
+                <td>23.62</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>21.48</td>
-                <td>41.48</td>
-                <td>13.25</td>
-                <td>4.21</td>
-                <td>20.10</td>
+                <td>15.56</td>
+                <td>32.09</td>
+                <td>12.17</td>
+                <td>6.31</td>
+                <td>16.53</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>78.62</td>
-                <td>89.71</td>
-                <td>51.97</td>
-                <td>54.02</td>
-                <td>68.58</td>
+                <td>90.78</td>
+                <td>91.25</td>
+                <td>54.26</td>
+                <td>80.87</td>
+                <td>79.29</td>
               </tr>
             </tbody>
           </table>
@@ -829,8 +840,10 @@
       </div> -->
       <div class="card-body">
         <h5 class="card-title"> Diagnosis(Accuracy)</h5>
-        <p class="card-text">This table showcases the performance of various models in diagnosis. The dataset, DDXPlus utilizes a predefined list of diseases, 
-          from which models must select one based on the provided patient context. In this task, accuracy is used as the metric.
+        <p class="card-text">This table showcases the performance of various models in diagnosis. The dataset, DDXPlus
+          utilizes a predefined list of diseases,
+          from which models must select one based on the provided patient context. In this task, accuracy is used as the
+          metric.
         </p>
         <div class="scrollable-container">
           <table id="DiagnosisResultTable" class="display" style="width:100%">
@@ -843,31 +856,31 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>52</td>
+                <td>58.13</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>48</td>
+                <td>60.24</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>24</td>
+                <td>29.53</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>32</td>
+                <td>35.20</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>32</td>
+                <td>33.73</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>28</td>
+                <td>34.80</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>95</td>
+                <td>97.53</td>
               </tr>
             </tbody>
           </table>
@@ -883,7 +896,8 @@
       </div> -->
       <div class="card-body">
         <h5 class="card-title"> Treatment Planning(Accuracy)</h5>
-        <p class="card-text">This table showcases the performance of various models in treatment planning. In the dataset, SEER, \
+        <p class="card-text">This table showcases the performance of various models in treatment planning. In the
+          dataset, SEER, \
           treatment recommendations are categorized into eight high-level types. Accuracy is used as the metric.</p>
         <div class="scrollable-container">
           <table id="TreatmentPlanningResultTable" class="display" style="width:100%">
@@ -896,31 +910,31 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>78</td>
+                <td>84.73</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>90</td>
+                <td>92.93</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>60</td>
+                <td>68.27</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>68</td>
+                <td>62.33</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>52</td>
+                <td>56.07</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>36</td>
+                <td>38.93</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>98</td>
+                <td>98.47</td>
               </tr>
             </tbody>
           </table>
@@ -936,7 +950,8 @@
       </div> -->
       <div class="card-body">
         <h5 class="card-title"> Clinical Outcome Prediction(Accuracy)</h5>
-        <p class="card-text">This table showcases the performance of various models in tlinical outcome prediction across different datasets.</p>
+        <p class="card-text">This table showcases the performance of various models in tlinical outcome prediction
+          across different datasets.</p>
         <div class="scrollable-container">
           <table id="ClinicalOutcomePredictionResultTable" class="display" style="width:100%">
             <thead>
@@ -950,45 +965,45 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>62</td>
-                <td>69</td>
-                <td>65.69</td>
+                <td>61.20</td>
+                <td>58.07</td>
+                <td>60.13</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>64</td>
-                <td>63</td>
-                <td>57.43</td>
+                <td>65.80</td>
+                <td>57.91</td>
+                <td>68.53</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>36</td>
-                <td>4</td>
-                <td>11</td>
+                <td>56.27</td>
+                <td>48.47</td>
+                <td>45.67</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>60</td>
-                <td>76</td>
-                <td>69</td>
+                <td>58.80</td>
+                <td>55.13</td>
+                <td>52.80</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>51</td>
-                <td>4</td>
-                <td>3</td>
+                <td>39.07</td>
+                <td>9.27</td>
+                <td>8.80</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>58</td>
-                <td>39</td>
-                <td>43</td>
+                <td>56.27</td>
+                <td>48.47</td>
+                <td>45.67</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>69</td>
-                <td>97</td>
-                <td>94</td>
+                <td>74.20</td>
+                <td>52.73</td>
+                <td>63.13</td>
               </tr>
             </tbody>
           </table>
@@ -1005,7 +1020,8 @@
       <div class="card-body">
         <h5 class="card-title"> Text Classification(P,R,F1)</h5>
         <p class="card-text">This table showcases the performance of various models in Text Classification.
-          The dataset used is HoC, which is designed for multi-label classsification. The metrics used are precision, recall, and F1 score.
+          The dataset used is HoC, which is designed for multi-label classsification. The metrics used are precision,
+          recall, and F1 score.
         </p>
         <div class="scrollable-container">
           <table id="resultsTable2" class="display" style="width:100%">
@@ -1020,45 +1036,45 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>55.07</td>
-                <td>72.37</td>
-                <td>60.38</td>
+                <td>61.07</td>
+                <td>80.23</td>
+                <td>68.06</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>55.18</td>
-                <td>80.96</td>
-                <td>63.32</td>
+                <td>58.43</td>
+                <td>79.84</td>
+                <td>66.74</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>23.39</td>
-                <td>36.85</td>
-                <td>26.21</td>
+                <td>19.61</td>
+                <td>34.61</td>
+                <td>23.70</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>22.97</td>
-                <td>83.16</td>
-                <td>32.72</td>
+                <td>20.65</td>
+                <td>82.24</td>
+                <td>31.09</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>26.6</td>
-                <td>69.59</td>
-                <td>36.18</td>
+                <td>32.40</td>
+                <td>52.03</td>
+                <td>38.37</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>35.18</td>
-                <td>59.27</td>
-                <td>40.80</td>
+                <td>40.39</td>
+                <td>64.11</td>
+                <td>48.73</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>91.29</td>
-                <td>85.57</td>
-                <td>87.37</td>
+                <td>89.59</td>
+                <td>85.58</td>
+                <td>86.66</td>
               </tr>
             </tbody>
           </table>
@@ -1075,9 +1091,11 @@
       </div> -->
       <div class="card-body">
         <h5 class="card-title"> Fact Verification(Accuracy, BLEU/ROUGE)</h5>
-        <p class="card-text">This table details the performance of various models on fact verification. 
-          For PubMedQA Answer Verification and HealthFact Verification, the LLMs is tasked to select a single answer from a list of provided candidates, 
-          with accuracy employed as the evaluation metric. Conversely, for EBMS Justification Verification, which requires the LLMs to generate free-form text, 
+        <p class="card-text">This table details the performance of various models on fact verification.
+          For PubMedQA Answer Verification and HealthFact Verification, the LLMs is tasked to select a single answer
+          from a list of provided candidates,
+          with accuracy employed as the evaluation metric. Conversely, for EBMS Justification Verification, which
+          requires the LLMs to generate free-form text,
           performance is assessed using BLEU and ROUGE metrics.
         </p>
         <div class="scrollable-container">
@@ -1093,45 +1111,45 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>52</td>
-                <td>76</td>
-                <td>16.36/16.33</td>
+                <td>66.15</td>
+                <td>78.60</td>
+                <td>16.28/16.27</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>4</td>
-                <td>64</td>
-                <td>14.22/15.82</td>
+                <td>11.54</td>
+                <td>62.04</td>
+                <td>14.77/16.45</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>26</td>
-                <td>40</td>
-                <td>10.86/13.73</td>
+                <td>25.23</td>
+                <td>32.66</td>
+                <td>11.58/15.78</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>98</td>
-                <td>92</td>
-                <td>-/15.10</td>
+                <td>99.23</td>
+                <td>76.94</td>
+                <td>8.75/14.69</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>94</td>
-                <td>64</td>
-                <td>12.96/14.37</td>
+                <td>94.77</td>
+                <td>63.89</td>
+                <td>16.52/16.49</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>54</td>
-                <td>68</td>
-                <td>15.19/15.56</td>
+                <td>57.38</td>
+                <td>69.78</td>
+                <td>15.98/16.43</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>98</td>
-                <td>92</td>
-                <td>11.99/12.90</td>
+                <td>97.08</td>
+                <td>79.55</td>
+                <td>12.71/14.65</td>
               </tr>
             </tbody>
           </table>
@@ -1148,7 +1166,8 @@
       </div> -->
       <div class="card-body">
         <h5 class="card-title"> Natural Language Inference(Accuracy, BLEU/ROUGE)</h5>
-        <p class="card-text">The results are measured with accuracy for the discriminative tasks~(selecting the right answer from a list of candidates) 
+        <p class="card-text">The results are measured with accuracy for the discriminative tasks~(selecting the right
+          answer from a list of candidates)
           and BLEU/ROUGE metrics for the generative tasks~(generating free-form text answers).</p>
         <div class="scrollable-container">
           <table id="NLIResultsTable" class="display" style="width:100%">
@@ -1162,38 +1181,38 @@
             <tbody>
               <tr>
                 <td>GPT-4</td>
-                <td>82</td>
+                <td>86.63</td>
                 <td>27.09/23.71</td>
               </tr>
               <tr>
                 <td>Claude-3.5</td>
-                <td>86</td>
-                <td>17.73/16.70</td>
+                <td>82.14</td>
+                <td>17.80/20.02</td>
               </tr>
               <tr>
                 <td>MEDITRON</td>
-                <td>66</td>
-                <td>-/14.27</td>
+                <td>60.83</td>
+                <td>4.42/14.08</td>
               </tr>
               <tr>
                 <td>InternLM 2</td>
-                <td>84</td>
-                <td>25.42/24.91</td>
+                <td>84.67</td>
+                <td>15.84/19.01</td>
               </tr>
               <tr>
                 <td>Llama 3</td>
-                <td>62</td>
-                <td>33.69/27.28</td>
+                <td>63.85</td>
+                <td>21.31/22.75</td>
               </tr>
               <tr>
                 <td>Mistral</td>
-                <td>72</td>
-                <td>20.81/19.03</td>
+                <td>71.59</td>
+                <td>13.03/15.47</td>
               </tr>
               <tr>
                 <td>MMedIns-Llama 3</td>
-                <td>84</td>
-                <td>37.56/32.1</td>
+                <td>86.71</td>
+                <td>23.52/25.17</td>
               </tr>
             </tbody>
           </table>
@@ -1250,7 +1269,7 @@
       $('#TreatmentPlanningResultTable').DataTable();
       $('#ClinicalOutcomePredictionResultTable').DataTable();
       $('#OverviewTable').DataTable();
-        
+
     });
   </script>
 
