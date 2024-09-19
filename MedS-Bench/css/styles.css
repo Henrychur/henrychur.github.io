@@ -10906,6 +10906,6 @@ header {
 
 
 .specific-height {
-  height: 530px; /* 或根据你的具体需求调整高度 */
+  height: 720px; /* 或根据你的具体需求调整高度 */
   overflow: auto; /* 允许内容滚动 */
 }
