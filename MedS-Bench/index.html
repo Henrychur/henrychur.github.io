@@ -1756,19 +1756,71 @@
       //   ]
       // });
 
-      $('#resultsTable').DataTable();
-      $('#resultsTable2').DataTable();
-      $('#infoExtractionTable').DataTable();
-      $('#medicalConceptTable').DataTable();
-      $('#rationaleResultsTable').DataTable();
-      $('#nerResultsTable').DataTable();
-      $('#factVerificationResultsTable').DataTable();
-      $('#NLIResultsTable').DataTable();
-      $('#summaryResultsTable').DataTable();
-      $('#DiagnosisResultTable').DataTable();
-      $('#TreatmentPlanningResultTable').DataTable();
-      $('#ClinicalOutcomePredictionResultTable').DataTable();
-      $('#OverviewTable').DataTable();
+      $('#resultsTable').DataTable({
+        "pageLength": 50,  // 每页显示50条数据
+        "order": [[1, 'desc']]  // 默认按第一列降序排序
+      });
+
+      $('#resultsTable2').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#infoExtractionTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#medicalConceptTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#rationaleResultsTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#nerResultsTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#factVerificationResultsTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#NLIResultsTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#summaryResultsTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#DiagnosisResultTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#TreatmentPlanningResultTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#ClinicalOutcomePredictionResultTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
+      $('#OverviewTable').DataTable({
+        "pageLength": 50,
+        "order": [[1, 'desc']]
+      });
+
 
     });
   </script>
